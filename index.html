@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#F3EEE6">
+  <meta name="description" content="這是一本公開的香港工程現場用語辭典。俚語與官銜並非同一回事。圖面略語須按圖例與文脈解讀。">
+  <title>香港地盤用語</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#q">跳到搜尋</a>
+  <div class="app" id="app">
+    <header class="site-header">
+      <p class="preview-banner">預覽版本</p>
+      <div class="site-header-inner">
+        <div class="brand-row">
+          <a class="site-title" href="./" id="home-link">香港地盤用語</a>
+          <button type="button" class="text-btn" id="about-btn" aria-expanded="false" aria-controls="about-panel">說明</button>
+        </div>
+        <div class="about-panel" id="about-panel" hidden>
+          <p>這是一本公開的香港工程現場用語辭典。俚語與官銜並非同一回事。圖面略語須按圖例與文脈解讀。</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="workspace">
+      <section class="pane pane-list" id="pane-list" aria-label="詞目一覽">
+        <form class="search-form" id="search-form" role="search">
+          <label class="sr-only" for="q">搜尋用語、別名、官銜或英文</label>
+          <div class="search-field">
+            <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+              <circle cx="8.5" cy="8.5" r="5.25" fill="none" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M12.4 12.4 16.2 16.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/>
+            </svg>
+            <input type="search" id="q" name="q" placeholder="搜尋用語、別名、官銜或英文" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search">
+            <button type="button" class="clear-btn" id="clear-btn" hidden>清除</button>
+          </div>
+        </form>
+
+        <div class="filters" role="toolbar" aria-label="分類">
+          <div class="cat-scroll" id="cat-bar"></div>
+        </div>
+
+        <div class="utility-row">
+          <button type="button" class="text-btn" id="chars-btn" aria-expanded="false" aria-controls="char-index">按首字瀏覽</button>
+          <button type="button" class="text-btn" id="sensitive-btn" aria-pressed="false">顯示敏感語</button>
+        </div>
+        <div class="char-index" id="char-index" hidden></div>
+
+        <p class="result-meta" id="result-meta" aria-live="polite">載入詞目</p>
+        <div id="sensitive-hint" class="sensitive-hint" role="status" hidden></div>
+        <div class="term-list" id="term-list">
+          <div class="state"><h2>載入詞目</h2></div>
+        </div>
+      </section>
+
+      <section class="pane pane-detail" id="pane-detail" aria-label="詞目詳情"></section>
+    </div>
+  </div>
+
+  <dialog class="warn-dialog" id="sensitive-dialog" aria-labelledby="warn-title">
+    <h2 id="warn-title">顯示敏感語</h2>
+    <p>此語是重大、通常致命的地盤意外之俚語，與普通出土或泥頭無關。來源單薄，可信度低。確定要在本頁顯示嗎？</p>
+    <div class="dialog-actions">
+      <button type="button" class="btn-quiet" id="warn-cancel">取消</button>
+      <button type="button" class="btn-solid" id="warn-confirm">顯示</button>
+    </div>
+  </dialog>
+
+  <noscript>
+    <p class="noscript">此頁需要 JavaScript 才能載入詞表。</p>
+  </noscript>
+  <script src="assets/site.js"></script>
+</body>
+</html>
