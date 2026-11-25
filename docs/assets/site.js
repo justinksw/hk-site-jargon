@@ -354,7 +354,7 @@
   function renderDetail() {
     const term = state.term;
     if (!term || !byTerm.has(term)) {
-      paneDetail.innerHTML = `<div class="detail-idle"><h2>選一個詞</h2><p>在左欄搜尋或點選詞目，即可閱讀釋義。這是一本香港工程現場用語辭典。俚語與官銜並非同一回事；圖面略語須按圖例與文脈解讀。</p></div>`;
+      paneDetail.innerHTML = `<div class="detail-idle"><h2>選一個詞</h2><p>在左欄搜尋或點選詞目，即可閱讀釋義。這是一本香港工程現場用語辭典。俚語與官銜並非同一回事。圖面略語須按圖例與文脈解讀。</p></div>`;
       app.classList.remove("is-detail");
       return;
     }
